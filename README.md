@@ -1,19 +1,6 @@
-# House-price-
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
+✅ 功能特色：
+用者輸入房屋資料後即可得到預測結果
 
-# 複製一份資料做處理
-df_processed = df.copy()
+沒有依賴外部資料（CSV等）
 
-# 移除不必要的欄位，例如交易日期
-df_processed.drop(columns=['交易日期'], inplace=True)
-
-# 類別型欄位：行政區、用途、車位類別、電梯（轉為字串以便處理）
-categorical_columns = ['行政區', '用途', '車位類別', '電梯']
-for col in categorical_columns:
-    df_processed[col] = df_processed[col].astype(str)
-    encoder = LabelEncoder()
-    df_processed[col] = encoder.fit_transform(df_processed[col])
-
-# 檢查處理後的資料
-df_processed.head()
+可以依據你實際的房價與特徵做模型調整
